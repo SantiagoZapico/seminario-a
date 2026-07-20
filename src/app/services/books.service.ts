@@ -27,10 +27,14 @@ export class BooksService {
   }
 
   public find(search: Search): void {
+    const titleQuery = (search.title || '').toLowerCase();
+    const authorQuery = (search.author || '').toLowerCase();
+    const genreQuery = (search.genre || '').toLowerCase();
+
     let books = this._dataService.data
-      .filter((b) => b.title.toLowerCase().match(search.title.toLowerCase()))
-      .filter((b) => b.author?.toLowerCase().match(search.author.toLowerCase()))
-      .filter((b) => b.genre?.toLowerCase().match(search.genre.toLowerCase()))
+      .filter((b) => (b.title || '').toLowerCase().includes(titleQuery))
+      .filter((b) => (b.author || '').toLowerCase().includes(authorQuery))
+      .filter((b) => (b.genre || '').toLowerCase().includes(genreQuery))
       .slice(0, 10);
 
     books.forEach((book) => {
