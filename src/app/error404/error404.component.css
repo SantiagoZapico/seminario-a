@@ -1,0 +1,11 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vw;
+}
+p {
+  font-size: 3rem;
+  padding: 1rem;
+}

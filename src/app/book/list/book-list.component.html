@@ -1,0 +1,48 @@
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <td>Tapa</td>
+        <td>Título</td>
+        <td>Autor</td>
+        <td>Género</td>
+        <td>Precio</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of books; track book.id) {
+      <tr [ngClass]="{'favourite': book.favourite}">
+        <td class="cover">
+          @if (book.url_cover) {
+          <img [src]="book.url_cover" [alt]="'No disponible'" />
+          }
+        </td>
+        <td>
+          {{ book.title }}
+        </td>
+        <td>
+          {{ book.author }}
+        </td>
+        <td>
+          {{ book.genre }}
+        </td>
+        <td>
+          {{ book.price }}
+        </td>
+        <td class="actions">
+          <button (click)="toggleFavorite(book.id!)">
+            {{ book.favourite ? '-' : '+' }}
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  @if (books.length === 0) {
+  <div class="vacio">
+    <span>NO HAY LIBROS PARA MOSTRAR</span>
+  </div>
+  }
+</div>

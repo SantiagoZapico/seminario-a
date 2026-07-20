@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  img {
+    height: 3rem;
+  }
+
+  td.cover {
+    text-align: center;
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  tbody tr {
+    background-color: #96cfda;
+  }
+
+  .favourite {
+    background-color: rgb(90, 130, 143);
+  }
+}

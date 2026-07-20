@@ -1,0 +1,11 @@
+nav {
+
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+
+  span {
+    display: flex;
+    gap: 1rem;
+  }
+}

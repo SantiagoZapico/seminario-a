@@ -1,0 +1,9 @@
+<nav>
+  <span>{{ title | uppercase }}</span>
+  <span>
+    <a [routerLink]="['/books']" routerLinkActive="router-link-active" >Libros</a>
+    <a [routerLink]="['/favourites']" routerLinkActive="router-link-active" >Favoritos</a>
+    <a [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
+
+  </span>
+</nav>

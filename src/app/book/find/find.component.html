@@ -1,0 +1,16 @@
+<div id="search" class="content">
+  <div class="fields" #fields>
+    <input type="text" placeholder="Búsqueda por título..." [(ngModel)]="search.title" (keyup.enter)="find()">
+    <input type="text" placeholder="Búsqueda por autor..."  [(ngModel)]="search.author" (keyup.enter)="find()">
+    <input type="text" placeholder="Búsqueda por género..." [(ngModel)]="search.genre" (keyup.enter)="find()">
+  </div>
+  <button (click)="find()">Buscar</button>
+</div>
+
+<div class="content">
+
+  <h2>Resultado Búsqueda</h2>
+  <app-list-books [books]="books"></app-list-books>
+
+  <app-favourites></app-favourites>
+</div>
